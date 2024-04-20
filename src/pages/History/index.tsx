@@ -1,9 +1,14 @@
+import { useContext } from 'react'
 import { HistoryContainer, HistoryList, Status } from './styles'
+import { CyclesContext } from '../../contexts/CyclesContext'
 
 export function History() {
+  const { cycles } = useContext(CyclesContext)
+
   return (
     <HistoryContainer>
-      <h1>Meu jdjdjd</h1>
+      <h1>Meu Histórico</h1>
+      {cycles.length === 0 && <p>No cycles yet</p>}
       <HistoryList>
         <table>
           <thead>
